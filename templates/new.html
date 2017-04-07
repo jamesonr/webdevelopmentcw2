@@ -1,0 +1,66 @@
+{% extends "layout.html" %} 
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Contact
+                        <strong>VisitNI</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-8">
+                    <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577.8162473586906!2d-5.930015970731828!3d54.599323075655946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48610856f13506d7%3A0x17618ef44eab7370!2s19+Castle+Pl%2C+Belfast+BT1!5e0!3m2!1sen!2suk!4v1490036298075" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4">
+                    <p>Phone:
+                        <strong>07795297585</strong>
+                    </p>
+                    <p>Email:
+                        <strong><a href="rjameson112@gmail.com">rjameson112@gmail.com</a></strong>
+                    </p>
+                    <p>Address:
+                        <strong>
+                            <br>19 Castle Place, Belfast BT1 2AA</strong>
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Contact
+                        <strong>form</strong>
+                    </h2>
+                    <hr>
+                    <p>For any queries please fill out the following contact form and I will get back to you within 3-5 working days</p>
+
+      <h3></h3>
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+
+      {%- endfor %}
+      
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label><br>
+         <input type = "text" name = "name" placeholder = "Name" /><br>
+         <label for = "email">City</label><br>
+         <input type = "text" name = "city" placeholder = "City" /><br>
+         <label for = "addr">What Is Your Recommendation For The Website?</label><br>
+         <textarea name = "addr" placeholder = "Please Write Your Answer Here"></textarea><br>
+         <label for = "PIN">Have You Ever Visited Ireland?</label><br>
+         <input type = "text" name = "pin" placeholder = "Yes Or No" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+      
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
